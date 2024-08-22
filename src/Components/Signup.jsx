@@ -6,6 +6,7 @@ const Signup = () => {
   return (
     <div className='signupPopup'>
       <form action="" >
+        <h2 className='signupText'>Create an Account !</h2>
         <div className='inp'>
         <input type="text" name="" id="" />
         <div className='lablediv'>Name</div>

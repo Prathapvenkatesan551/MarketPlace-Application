@@ -1,5 +1,4 @@
-
-.signupPopup {
+.loginPopup {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,12 +7,8 @@
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.5);
 }
-.signupText{
-    text-align: center;
-    color: rgb(51, 235, 119);
-    margin-bottom: 5px;
-}
-.signupPopup form {
+
+.loginPopup form {
     display: flex;
     flex-direction: column;
     width: 400px;
@@ -21,9 +16,13 @@
     padding: 30px;
     background-color: rgb(37, 37, 37);
     gap: 20px; 
+    text-align: center;
 }
-
-.signupPopup form input {
+.loginText{
+    color: rgb(51, 235, 119);
+    margin-bottom: 5px;
+}
+.loginPopup form input {
     width: 100%;
     height: 50px;
     outline: none;
@@ -36,7 +35,7 @@
     z-index: 1; 
 }
 
-.signupPopup button {
+.loginPopup button {
     height: 40px;
     width: 50%;
     margin-left: 25%;
@@ -48,8 +47,7 @@
     transition: background-color 0.3s ease;
 }
 
-.signupPopup button:hover {
-    background-color: #dddddd;
+.loginPopup button:hover {
     background-color: rgb(77, 209, 119);
 }
 
@@ -58,7 +56,7 @@
     margin-bottom: 20px; 
 }
 
-.signupPopup .lablediv {
+.loginPopup .lablediv {
     position: absolute;
     top: 15px;
     left: 10px;
@@ -70,8 +68,8 @@
     z-index: 1111; 
 }
 
-.signupPopup form input:focus + .lablediv,
-.signupPopup form input:not(:placeholder-shown) + .lablediv {
+.loginPopup form input:focus + .lablediv,
+.loginPopup form input:not(:placeholder-shown) + .lablediv {
     color: rgb(112, 224, 131);
     top: -10px;
 }
