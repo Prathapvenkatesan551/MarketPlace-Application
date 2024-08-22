@@ -1,0 +1,70 @@
+.signupPopup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.signupPopup form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    max-width: 100%;
+    padding: 30px;
+    background-color: rgb(37, 37, 37);
+    gap: 20px; /* Adds space between input fields */
+}
+
+.signupPopup form input {
+    width: 100%;
+    height: 50px;
+    outline: none;
+    padding: 0 10px;
+    border-radius: 10px;
+    border: 2px solid seashell;
+    background-color: transparent;
+    color: rgb(252, 249, 249);
+    position: relative;
+    z-index: 1; /* Ensures the input is above the label */
+}
+
+.signupPopup button {
+    height: 40px;
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 10px;
+    background-color: #97cf95;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signupPopup button:hover {
+    background-color: #dddddd;
+    background-color: rgb(77, 209, 119);
+}
+
+.inp {
+    position: relative;
+    margin-bottom: 20px; /* Adds spacing between inputs */
+}
+
+.signupPopup .lablediv {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    background-color: rgb(37, 37, 37);
+    padding: 0 5px;
+    color: aliceblue;
+    font-size: 14px;
+    transition: top 0.3s ease, color 0.3s ease; /* Smooth transition */
+    z-index: 1111; /* Ensures the label is behind the input */
+}
+
+.signupPopup form input:focus + .lablediv,
+.signupPopup form input:not(:placeholder-shown) + .lablediv {
+    color: rgb(112, 224, 131);
+    top: -10px;
+}
