@@ -11,15 +11,6 @@ const Signup = () => {
   const [getMobileNumber, setMobileNumber] = useState("");
   const [errors, setErrors] = useState({});
 
- /* const [Accounts, setAccounts] = useState([]);
-  AccountService()
-    .then((response) => {
-      setAccounts(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-*/
   const validate = () => {
     let validationErrors = {};
     let isValid = true;
@@ -63,21 +54,47 @@ const Signup = () => {
       const accountId = 1;
       const accountName = getName;
       const email = getEmail;
-      const passsword = getPassword;
+      const password = getPassword;
       const mobileNumber = getMobileNumber;
 
       const Account = {
         accountId,
         accountName,
         email,
-        passsword,
+        password,
         mobileNumber,
       };
-      PostAccount(Account).then((response) => {
-        console.log(response);
-      });
-      console.log("Form submitted successfully");
-      // navigate('/Login');
+      PostAccount(Account)
+  .then((response) => {
+    if (response.status === 201) {
+      console.log("Account created successfully:", response.data);
+      navigate('/Login');
+    } 
+  })
+  .catch((error) => {
+    if (error.response) {
+        if (error.response.status === 409) 
+          {
+          alert('Error: Email already exists');
+        console.log("Error: Email already exists");
+       } 
+       else if(error.response.status===500){
+        alert("Mobile number already exist");
+       }
+       else {
+        console.log("Unexpected status code:", error.response.status);
+      }
+    } 
+    else if (error.request) {
+      console.error("No response received:", error.request);
+    }
+     else {
+      console.error("Error in setting up the request:", error.message);
+    }
+  });
+;
+      
+      
     }
   };
 
