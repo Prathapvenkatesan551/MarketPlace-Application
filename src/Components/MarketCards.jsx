@@ -70,7 +70,7 @@ export const RenewedProducts=()=>{
         }
     ];
     return(
-        <div className="newProducts"> 
+        <div className="renewedProducts"> 
             {newProducts.map((product, index) => (
                 <MarketCards
                     key={index}

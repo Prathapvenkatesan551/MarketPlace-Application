@@ -1,3 +1,4 @@
+import Footer from './Components/Footer'
 import Home from './Components/Home'
 import Login from './Components/Login'
 import NavBar from './Components/NavBar'
@@ -12,7 +13,7 @@ function App() {
           <Route path='/' element={<Signup/>}/>
           <Route path='/Login' element={<Login/>}/>
         </Routes>
-      
+      <Footer/>
       {/* <Signup/> */}
     </>
   )

@@ -1,0 +1,49 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    background-color: rgb(37,37,37);
+    padding: 20px;
+}
+.foot_1{
+    display: flex;
+    color: rgb(97, 187, 51);
+    margin-left: 30px;
+    font-size: 20px;
+    font-family: fantasy;
+    width: 300px;
+    /* justify-content: center; */
+}
+.foot_2{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20%;
+    justify-content: center;
+    padding: 10px;
+  
+   
+}
+.foot_3{
+    color: rgb(194, 200, 206);
+    display: flex;
+    justify-content: center;
+   
+}
+.contents,.about,.socialMedia{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: rgb(131, 140, 148);
+    width: 200px;
+   
+}
+.foot_2 h3{
+    cursor: pointer;
+}
+.foot_2 h3:hover{
+    color: aliceblue;
+}
+.foot_2 h2{
+    color: rgb(239, 236, 230);
+}
