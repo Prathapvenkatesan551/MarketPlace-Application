@@ -18,8 +18,10 @@ public class Account {
 private Long accountId;
     @Column(name = "Name")
 private String accountName;
-    @Column(name = "EmailAddress")
-private String email;
+    @Column(name = "EmailAddress" ,nullable = false , unique = true)
+    private String email;
+    @Column
+    private String password;
     @Column(name = "MobileNumber",nullable = false , unique = true)
 private String mobileNumber;
 

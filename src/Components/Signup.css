@@ -75,3 +75,51 @@
     color: rgb(112, 224, 131);
     top: -10px;
 }
+
+.signupPopup form input {
+    width: 100%;
+    height: 50px;
+    outline: none;
+    padding: 0 10px;
+    border-radius: 10px;
+    border: 2px solid seashell;
+    background-color: transparent;
+    color: rgb(252, 249, 249);
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+
+.signupPopup form input:-webkit-autofill,
+.signupPopup form input:-webkit-autofill:hover,
+.signupPopup form input:-webkit-autofill:focus,
+.signupPopup form input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px rgb(37, 37, 37) inset !important;
+    -webkit-text-fill-color: rgb(252, 249, 249) !important;
+}
+
+
+.signupPopup form input.error-border {
+    border-color: red;
+}
+
+
+.signupPopup .lablediv {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    background-color: rgb(37, 37, 37);
+    padding: 0 5px;
+    color: aliceblue;
+    font-size: 14px;
+    transition: top 0.3s ease, color 0.3s ease;
+    z-index: 2;
+}
+
+
+.signupPopup form input:focus + .lablediv,
+.signupPopup form input:not(:placeholder-shown) + .lablediv {
+    color: rgb(112, 224, 131);
+    top: -10px;
+}

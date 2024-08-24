@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <NavBar/>
-     
+        
         <Routes>
           <Route path='/' element={<Signup/>}/>
           <Route path='/Login' element={<Login/>}/>

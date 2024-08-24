@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api")
+
 public class AccountController {
 
 
@@ -26,11 +28,17 @@ public class AccountController {
     }
 
     @PostMapping("/public/accounts")
-    //@RequestMapping(value = "/public/categories", method = RequestMethod.POST)
-    public ResponseEntity<String> createAccount(@Valid @RequestBody Account account){
-        accountService.createAccount(account);
-        return new ResponseEntity<>("Account added successfully", HttpStatus.CREATED);
+
+    public ResponseEntity<String> createAccount(@Valid @RequestBody Account account) {
+        String result = accountService.createAccount(account);
+
+        if ("Email already exists".equals(result)) {
+            return new ResponseEntity<>(result, HttpStatus.CONFLICT);
+        } else {
+            return new ResponseEntity<>("Account added successfully", HttpStatus.CREATED);
+        }
     }
+
 
     @DeleteMapping("/admin/accounts/{accountId}")
     public ResponseEntity<String> deleteAccount(@PathVariable Long accountId){
@@ -39,7 +47,9 @@ public class AccountController {
             //return new ResponseEntity<>(status, HttpStatus.OK);
             //return ResponseEntity.ok(status);
             return ResponseEntity.status(HttpStatus.OK).body(status);
-        } catch (ResponseStatusException e){
+        }
+        catch (ResponseStatusException e)
+        {
             return new ResponseEntity<>(e.getReason(), e.getStatusCode());
         }
     }

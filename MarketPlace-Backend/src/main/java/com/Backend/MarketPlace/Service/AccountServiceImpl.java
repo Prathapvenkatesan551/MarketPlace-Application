@@ -1,7 +1,9 @@
 package com.Backend.MarketPlace.Service;
 
 import com.Backend.MarketPlace.Entity.Account;
+import com.Backend.MarketPlace.Exceptions.DuplicateEmailException;
 import com.Backend.MarketPlace.Repository.AccountRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -22,22 +24,30 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public void createAccount(Account account) {
-        account.setAccountId(nextId++);
-        accountRepository.save(account);
+    @Transactional
+
+    public String createAccount(Account account) {
+        Optional<Account> existingAccount = accountRepository.findByEmail(account.getEmail());
+
+        if (existingAccount.isPresent()) {
+            // If an account with the same email already exists, return a message indicating so
+            return "Email already exists";
+        } else {
+            // Set the account ID and save the new account
+            account.setAccountId(nextId++);
+            accountRepository.save(account);
+            return "Account created successfully";
+        }
     }
 
     @Override
-    public String deleteAccount(Long id) {
-        List<Account> accounts = accountRepository.findAll();
-        Account account=accounts.stream()
-                .filter(c -> c.getAccountId().equals(id))
-                .findFirst()
+    public String deleteAccount(Long accountId) {
+        Account account = accountRepository.findById(Math.toIntExact(accountId))
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Resource not found"));
-
-        accounts.remove(account);
-        return "Account with Id: " + id + " deleted successfully !!";
+        accountRepository.delete(account);
+        return "Account with Id: " + accountId + " deleted successfully !!";
     }
+
 
     @Override
     public Account updateAccount(Account account, Long accountId) {
