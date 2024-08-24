@@ -1,5 +1,4 @@
-
-nav{
+nav {
     display: flex;
     background-color: rgb(37, 37, 37);
     justify-content: space-between;
@@ -9,34 +8,38 @@ nav{
     height: 60px;
     padding: 5px;
     border-radius: 5px;
-    
-}
-.cartImage,.userImage{
-width: 30px;
-height: 30px;
-}
-nav .NavLeft{
+  }
+  
+  .cartImage, .userImage {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .NavLeft {
     width: 30%;
     display: flex;
     align-items: center;
     gap: 10%;
     padding: 5px;
-}
-nav .NavRight{
+  }
+  
+  .NavRight {
     width: 50%;
     display: flex;
     gap: 5%;
     justify-content: right;
     align-items: center;
     padding: 5px;
-}
-.NavLeft label{
+  }
+  
+  .NavLeft label {
     font-size: 30px;
     font-weight: bolder;
     color: aliceblue;
-   font-family: Georgia, 'Times New Roman', Times, serif;
-}
-.NavLeft button{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .NavLeft button {
     padding: 8px;
     font-size: 20px;
     cursor: pointer;
@@ -45,19 +48,21 @@ nav .NavRight{
     background-color: rgb(37, 37, 37);
     color: aliceblue;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-.NavRight .imageButton{
+  }
+  
+  .NavRight .imageButton {
     padding: 8px;
     border: none;
-    border-radius: 50px;
+    border-radius: 50%;
     width: 40px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-}
-.HC{
+  }
+  
+  .HC {
     padding: 8px;
     border: none;
     background-color: rgb(37, 37, 37);
@@ -67,50 +72,64 @@ nav .NavRight{
     width: 120px;
     height: 40px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-.HC:hover{
-    /* width: 100%; */
+  }
+  
+  .HC:hover {
     transform: scale(105%);
-    transition: transform 1.50s ease;
-   border: 2px solid silver;
-   font-size: 17px;
-}
-.profileMenu{
-    display: flex;
-    flex-direction: column;
+    transition: transform 0.3s ease; /* Faster transition for a smoother effect */
+    border: 2px solid silver;
+    font-size: 17px;
+  }
+  
+  .profileMenu {
     position: absolute;
-    background-color: rgb(33, 37, 37);
-    padding: 10px;
     right: 2.5%;
     top: 10.5%;
     width: 300px;
-    height: 500px;
+    max-height: 0;
+    overflow: hidden;
     border-radius: 5px;
+    background-color: rgb(33, 37, 37);
     color: aliceblue;
-}
-.profileImage{
+    transition: max-height 0.5s ease-out;
+  }
+  
+  .profileMenu.active {
+    max-height: 500px;
+  }
+  
+  .profileMenuContent {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .profileImage {
     width: 100px;
     height: 100px;
     border: 2px solid black;
     padding: 5px;
-    border-radius: 50px;
+    border-radius: 50%;
     background-color: aliceblue;
-}
-.part-1{
+  }
+  
+  .part-1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
-}
-.part-2{
+  }
+  
+  .part-2 {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     gap: 2px;
     width: 100%;
-}
-.part-2 button{
+  }
+  
+  .part-2 button {
     width: 100%;
     border: none;
     height: 40px;
@@ -121,15 +140,18 @@ nav .NavRight{
     align-items: center;
     gap: 20px;
     cursor: pointer;
-}
-.part-2 button:hover{
+  }
+  
+  .part-2 button:hover {
     background-color: rgb(184, 207, 207);
     color: black;
-}
-.part-2 button .Image{
+  }
+  
+  .part-2 .Image {
     background-color: rgb(184, 207, 207);
     width: 25px;
     height: 25px;
-    border-radius: 40px;
+    border-radius: 50%;
     padding: 3px;
-}
+  }
+  
