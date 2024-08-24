@@ -43,3 +43,8 @@
     padding: 5px;
     border-radius: 5px;
 }
+.newProducts{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 55px;
+}
