@@ -1,6 +1,7 @@
 import React from 'react'
 import './MarketCards.css'
 import PropTypes from 'prop-types'
+import { currentAccount } from './Login'
 const MarketCards = (props) => {
   return (
     <div className='marketCard'>

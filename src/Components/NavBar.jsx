@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import './NavBar.css';
-
+import { currentAccount } from './Login';
+import { Navigate, useNavigate } from 'react-router-dom';
 const NavBar = () => {
+  
   const [showProfileMenu, setShowProfileMenu] = useState(false);
 
   const handleAccount = () => {
     setShowProfileMenu(!showProfileMenu);
+
   };
+  
 
   return (
     <nav>
@@ -21,7 +25,7 @@ const NavBar = () => {
           <img src="cart.png" alt="Cart" className="cartImage" />
         </button>
         <button className="imageButton" id="Account" onClick={handleAccount}>
-          <img src="user.png" alt="User" className="userImage" />
+          <img src={currentAccount.Dp}  alt="User" className="userImage" />
         </button>
       </div>
       <div className={showProfileMenu ? 'profileMenu active' : 'profileMenu'}>
@@ -32,13 +36,19 @@ const NavBar = () => {
 };
 
 export const ProfileMenu = () => {
+  const navigate=useNavigate();
+  const handleLogout=()=>{
+    navigate('/Login');
+    window.location.reload();
+
+  }
   return (
     <div className="profileMenuContent">
       <div className="part-1">
         <label>Account</label>
-        <img src="user.png" alt="Profile" className="profileImage" />
-        <label>Prathap Venkatesan</label>
-        <label>prathap2venkatesan@gmail.com</label>
+        <img src={currentAccount.Dp} alt="Profile" className="profileImage" />
+        <label>{currentAccount.accountName}</label>
+        <label>{currentAccount.email}</label>
       </div>
       <div className="part-2">
         <button>
@@ -53,7 +63,7 @@ export const ProfileMenu = () => {
           <img src="high-score.png" alt="Market Score" className="Image" />
           Market Score
         </button>
-        <button>
+        <button onClick={handleLogout}>
           <img src="logout.png" alt="Log out" className="Image" />
           Log out
         </button>

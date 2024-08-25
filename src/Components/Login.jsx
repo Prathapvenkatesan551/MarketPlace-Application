@@ -2,6 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./Login.css";
 import { AccountService } from "../BackendService/AccountService";
 import { Navigate, useNavigate } from "react-router-dom";
+export let currentAccount=
+{  accountName:"Unknown User",
+    email:"Sign in",
+    Dp:"user.png"
+
+};
 const Login = () => {
   const navigate=useNavigate();
   const [getEmail, setEmail] = useState("");
@@ -9,6 +15,7 @@ const Login = () => {
   const [Accounts, setAccounts] = useState([]);
   let account = null;
 
+  
   useEffect(() => {
     AccountService()
       .then((response) => {
@@ -40,6 +47,7 @@ const Login = () => {
 
     if (account) {
       if (getPassword === account.password) {
+        currentAccount=account;
         return true;
       } else {
         console.log("Password does not match.");
@@ -55,6 +63,7 @@ const Login = () => {
     event.preventDefault();
     console.log(account);
     if (checkEmailAndPassword()) {
+      currentAccount.Dp="Dp.jpg";
       navigate("/Home");
     } else {
       alert("Password does not match or Email not found.");
