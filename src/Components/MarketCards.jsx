@@ -2,9 +2,16 @@ import React from 'react'
 import './MarketCards.css'
 import PropTypes from 'prop-types'
 import { currentAccount } from './Login'
+import { Navigate, useNavigate } from 'react-router-dom'
 const MarketCards = (props) => {
+    const navigate=useNavigate();
+    const handleClick = () => {
+        if (props.product) {
+          navigate(props.product);  // Navigate to the provided product path
+        }
+      };
   return (
-    <div className='marketCard'>
+    <div className='marketCard' onClick={handleClick}>
       <img src={props.imageSrc} alt=""  className='car'/>
       <label htmlFor="" className='carLable'>{props.label_1}</label>
       <label htmlFor="" className='offerLabel'>{props.label_2}</label>
@@ -16,22 +23,26 @@ export const NewProducts=()=>{
         {
             label_1:"Mobiles for scale",
             label_2:"20% offer for new buyer",
-            imageSrc:"mobile.png"
+            imageSrc:"mobile.png",
+            product:"/NewMobiles"
         },
         {
             label_1:"Laptop for scale",
             label_2:"10% offer for new buyer",
-            imageSrc:"laptop.jpg"
+            imageSrc:"laptop.jpg",
+             product:"/Home/Laptops"
         },
         {
             label_1:"Books for scale",
             label_2:"50% offer for new buyer",
-            imageSrc:"books.jpg"
+            imageSrc:"books.jpg",
+             product:"/Home/NewBooks"
         },
         {
             label_1:"Furnitures for scale",
             label_2:"20% offer for new buyer",
-            imageSrc:"furnitures.jpg"
+            imageSrc:"furnitures.jpg",
+             product:"/Home/NewFurnitures"
         }
     ];
     return(
@@ -42,6 +53,7 @@ export const NewProducts=()=>{
                     label_1={product.label_1}
                     label_2={product.label_2}
                     imageSrc={product.imageSrc}
+                    product={product.product}
                 />
             ))}
         </div>
