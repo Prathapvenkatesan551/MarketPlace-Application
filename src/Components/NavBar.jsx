@@ -1,22 +1,23 @@
-import React, { useState } from 'react';
-import './NavBar.css';
-import { currentAccount } from './Login';
-import { Navigate, useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import "./NavBar.css";
+import { currentAccount } from "./Login";
+import { Navigate, useNavigate } from "react-router-dom";
 const NavBar = () => {
-  
   const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const [showExploreMenu, setShowExploreMenu] = useState(false);
 
   const handleAccount = () => {
     setShowProfileMenu(!showProfileMenu);
-
   };
-  
+  const handleExplore = () => {
+    setShowExploreMenu(!showExploreMenu);
+  };
 
   return (
     <nav>
       <div className="NavLeft">
         <label>MarketPlace</label>
-        <button>Explore</button>
+        <button onClick={handleExplore}>Explore</button>
       </div>
       <div className="NavRight">
         <button className="HC">Home</button>
@@ -25,23 +26,24 @@ const NavBar = () => {
           <img src="cart.png" alt="Cart" className="cartImage" />
         </button>
         <button className="imageButton" id="Account" onClick={handleAccount}>
-          <img src={currentAccount.Dp}  alt="User" className="userImage" />
+          <img src={currentAccount.Dp} alt="User" className="userImage" />
         </button>
       </div>
-      <div className={showProfileMenu ? 'profileMenu active' : 'profileMenu'}>
+      <div className={showProfileMenu ? "profileMenu active" : "profileMenu"}>
         {showProfileMenu && <ProfileMenu />}
+        
       </div>
+      {showExploreMenu && <ExploreMenu />}
     </nav>
   );
 };
 
 export const ProfileMenu = () => {
-  const navigate=useNavigate();
-  const handleLogout=()=>{
-    navigate('/Login');
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    navigate("/Login");
     window.location.reload();
-
-  }
+  };
   return (
     <div className="profileMenuContent">
       <div className="part-1">
@@ -68,6 +70,22 @@ export const ProfileMenu = () => {
           Log out
         </button>
       </div>
+    </div>
+  );
+};
+
+export const ExploreMenu = () => {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    navigate("/Login");
+    window.location.reload();
+  };
+  return (
+    <div className="ExploreMenuContent">
+      
+     <button>Sell Product</button>
+     <button>Explore sellers review</button>
+     <button>Top ratings</button>
     </div>
   );
 };
