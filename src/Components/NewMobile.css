@@ -58,3 +58,44 @@ h4{
    .VD:hover{
     background-color: rgb(101, 192, 231);
    }
+
+   .popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh; 
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .popupContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    height: 600px;
+    width: 90%;
+    text-align: center;
+    z-index: 1001; 
+    transition: transform 0.3s ease-out; 
+    transform: scale(1);
+  }
+  
+  .closeButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .closeButton:hover {
+    background-color: #d32f2f; 
+  }
+  
