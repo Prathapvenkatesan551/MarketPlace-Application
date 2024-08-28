@@ -15,14 +15,14 @@ import lombok.Setter;
 public class Account {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-private Long accountId;
+    private Long accountId;
     @Column(name = "Name")
-private String accountName;
+    private String accountName;
     @Column(name = "EmailAddress" ,nullable = false , unique = true)
     private String email;
     @Column
     private String password;
     @Column(name = "MobileNumber",nullable = false , unique = true)
-private String mobileNumber;
+    private String mobileNumber;
 
 }
