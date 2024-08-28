@@ -1,13 +1,14 @@
 import React from "react";
 import "./NewMobile.css";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
+import { GetNewMobiles } from "../BackendService/AccountService";
 
-export const MobileCard = ({ onViewDetails }) => {
+export const MobileCard = ({ onViewDetails ,mobileName}) => {
   return (
     <div className="MCard">
       <img src="iphone.jpg" alt="iPhone" className="mobileImage" />
       <div>
-        <h3>iPhone 15 (Purple Blue)</h3>
+        <h3>{mobileName}</h3>
         <h4>15% offer - Rs 70,000</h4>
         <p>128GB RAM | 48 + 12 MP | 1 year warranty for in-box accessories</p>
       </div>
@@ -31,10 +32,24 @@ const NewMobile = () => {
     setIsPopupOpen(false);
   };
 
+  const [getNewMobiles,setNewMobiles]=useState([]);
+  useEffect(() => {
+    GetNewMobiles()
+      .then((response) => {
+        setNewMobiles(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
     <div className="NewMobiles">
-      {[...Array(16)].map((_, index) => (
-        <MobileCard key={index} onViewDetails={handleViewDetails} />
+      {getNewMobiles.map((mobiles, index) => (
+        <MobileCard key={index} onViewDetails={handleViewDetails}
+        mobileName={mobiles.mobileName}
+        
+        />
+
       ))}
       {isPopupOpen && (
         <div className="popupOverlay">
