@@ -1,101 +1,102 @@
+.NewMobiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: rgb(217, 224, 225);
+  margin: 3%;
+  justify-content: center;
+  padding: 10px;
+}
+.MCard {
+  width: 250px;
+  height: 400px;
+  max-height: 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  transition-duration: 0.2s;
+  padding: 5px;
+}
+.MCard:hover {
+  transform: scale(105%);
+}
+h2 {
+  display: flex;
+}
+h4 {
+  color: rgb(3, 104, 70);
+}
+.mobileImage {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+}
+.cardButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.cardButtons button {
+  width: 50%;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.ATC {
+  background-color: aquamarine;
+}
+.ATC:hover {
+  background-color: rgb(76, 205, 162);
+}
+.VD {
+  background-color: rgb(130, 207, 240);
+}
+.VD:hover {
+  background-color: rgb(101, 192, 231);
+}
 
-.NewMobiles{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    background-color: rgb(217, 224, 225);
-    margin: 3%;
-    justify-content: center;
-    padding: 10px;
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.MCard{
-    width: 250px;
-    height: 400px;
-    max-height: 100%;
-    background-color: rgb(255, 255, 255);
-    border-radius: 5px;
-    transition-duration: 0.2s;
-    padding: 5px;
 
+.popupContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 900px;
+  height: 600px;
+  width: 90%;
+  text-align: center;
+  z-index: 1001;
+  transition: transform 0.3s ease-out;
+  transform: scale(1);
 }
-.MCard:hover{
-    transform: scale(105%);
-}
-h2{
-    display: flex;
-}
-h4{
-    color: rgb(3, 104, 70);
-}
-.mobileImage{
-    width: 100%;
-    height: 270px;
-    object-fit: cover;
-}
-.cardButtons{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    
-   }
-   .cardButtons button{
-    width: 50%;
-    height: 35px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-   }
-   .ATC{
-    background-color: aquamarine;
 
-   }
-   .ATC:hover{
-    background-color: rgb(76, 205, 162);
-   }
-   .VD{
-    background-color: rgb(130, 207, 240);
-   }
-   .VD:hover{
-    background-color: rgb(101, 192, 231);
-   }
+.closeButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-   .popupOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw; 
-    height: 100vh; 
-    background-color: rgba(0, 0, 0, 0.8); 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  
-  .popupContent {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 900px;
-    height: 600px;
-    width: 90%;
-    text-align: center;
-    z-index: 1001; 
-    transition: transform 0.3s ease-out; 
-    transform: scale(1);
-  }
-  
-  .closeButton {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .closeButton:hover {
-    background-color: #d32f2f; 
-  }
-  
+.closeButton:hover {
+  background-color: #d32f2f;
+}
+.BookButton{
+  border: none;
+  background-color: aquamarine;
+  padding: 5px;
+  width: 100px;
+  height: 30px;
+}
