@@ -30,19 +30,19 @@ export const NewProducts=()=>{
             label_1:"Laptop for scale",
             label_2:"10% offer for new buyer",
             imageSrc:"laptop.jpg",
-             product:"/Home/Laptops"
+             product:"/NewLaptops"
         },
         {
             label_1:"Books for scale",
             label_2:"50% offer for new buyer",
             imageSrc:"books.jpg",
-             product:"/Home/NewBooks"
+             product:"/NewBooks"
         },
         {
             label_1:"Furnitures for scale",
             label_2:"20% offer for new buyer",
             imageSrc:"furnitures.jpg",
-             product:"/Home/NewFurnitures"
+             product:"/NewFurnitures"
         }
     ];
     return(

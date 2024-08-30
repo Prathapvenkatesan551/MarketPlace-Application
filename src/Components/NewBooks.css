@@ -1,0 +1,13 @@
+.NewBookCont{
+    margin: 3%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.BookCard{
+    background-color: aquamarine;
+    padding: 10px;
+    width: 200px;
+    height: 400px;
+}

@@ -6,6 +6,7 @@ import NewMobile from './Components/NewMobile'
 import Signup from './Components/Signup'
 import {Route,Routes} from 'react-router-dom'
 import NewLap from './Components/NewLap'
+import NewBooks from './Components/NewBooks'
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
           <Route path='/Home' element={<Home/>}/>
           <Route path='/NewMobiles' element={<NewMobile/>}/>
           <Route path='/NewLaptops' element={<NewLap/>}/>
+          <Route path='/NewBooks' element={<NewBooks/>}/>
         </Routes>
         {/* <Home/> */}
       <Footer/>
