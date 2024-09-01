@@ -32,8 +32,7 @@ public class NewMobileServiceImpl implements NewMobileService {
         return "Mobile created successfully";
     }
 
-    // Delete a NewMobile entity by ID
-    // Delete a NewMobile entity by ID
+
     public String deleteNewMobile(Long mobileId) {
         NewMobile newMobile = (NewMobile) newMobileRepository.findById(mobileId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Mobile not found"));

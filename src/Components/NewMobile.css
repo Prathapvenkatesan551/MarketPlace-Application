@@ -67,8 +67,13 @@ h4 {
   align-items: center;
 }
 
-.popupContent {
+.M-popupContent {
   background-color: white;
+  display: flex;
+  overflow: scroll;
+  overflow-x: hidden;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   border-radius: 10px;
   max-width: 900px;
@@ -88,6 +93,7 @@ h4 {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  width: 200px;
 }
 
 .closeButton:hover {
@@ -99,4 +105,28 @@ h4 {
   padding: 5px;
   width: 100px;
   height: 30px;
+}
+.dataTable {
+  width: 300px;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.dataTable td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.popupImage{
+  width: 100%;
+  height: 100%;
+}
+.FullImages{
+  width: 50%;
+  height: 100%;
+  background-color: black;
 }
