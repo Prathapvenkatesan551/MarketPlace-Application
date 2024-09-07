@@ -9,7 +9,7 @@ export const MobileCard = ({ onViewDetails, mobile }) => {
       <img src="iphone.jpg" alt="iPhone" className="mobileImage" />
       <div>
         <h3>{mobile.mobileName}</h3>
-
+        
         <h4>15% offer - Rs {mobile.cost}</h4>
         <p>
           {mobile.ram}GB RAM |{mobile.rom}GB ROM | 48 + 12 MP |{" "}

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-@CrossOrigin("*")
+//@CrossOrigin("*")
 @RestController
 @RequestMapping("/api")
 
@@ -19,7 +19,7 @@ public class AccountController {
 
     @Autowired
     private AccountService accountService;
-
+    @CrossOrigin(origins = "http://192.168.24.176:5173")
     @GetMapping("/public/accounts")
     //@RequestMapping(value = "/public/categories", method = RequestMethod.GET)
     public ResponseEntity<List<Account>> getAllAccounts(){

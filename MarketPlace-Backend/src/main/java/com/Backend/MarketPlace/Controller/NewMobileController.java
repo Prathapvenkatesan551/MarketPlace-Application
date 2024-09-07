@@ -11,7 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
-@CrossOrigin("*")
+//@CrossOrigin("*")
 @RestController
 @RequestMapping("/api")
 public class NewMobileController {
@@ -22,7 +22,7 @@ public class NewMobileController {
     public NewMobileController(NewMobileService newMobileService) {
         this.newMobileService = newMobileService;
     }
-
+    @CrossOrigin(origins = "http://192.168.24.176:5173")
     @GetMapping("/public/newmobiles")
     public ResponseEntity<List<NewMobile>> getAllNewMobiles() {
         List<NewMobile> newMobiles = newMobileService.getAllNewMobiles();
